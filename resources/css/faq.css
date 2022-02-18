@@ -1,0 +1,112 @@
+@import url('inc/styles.css');
+@import url('inc/footer.css');
+main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.title {
+    font-size: calc(2vw + 20px);
+    color: #121212;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    font-family: "Cabin";
+}
+
+article {
+    width: 60%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: "Cabin";
+}
+
+section {
+    height: auto;
+    width: 100%;
+    position: relative;
+    cursor: pointer;
+    transition: 0.5s;
+    border-bottom: 1px solid #afafaf;
+}
+
+section:last-child {
+    margin-bottom: 3em;
+}
+
+.first {
+    border-top: 1px solid #afafaf;
+}
+
+.faq-collapsible {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    box-sizing: border-box;
+    background-color: white;
+    overflow: hidden;
+}
+
+.question {
+    font-size: 1.4em;
+    font-weight: 600;
+}
+
+.question.active {
+    color: rgb(35, 113, 231);
+}
+
+.faq-answer {
+    overflow: hidden;
+    transition: 0.5s;
+    height: 0;
+}
+
+.open {
+    height: fit-content;
+}
+
+.arrow-container {
+    width: 40px;
+    height: 30px;
+    position: relative;
+}
+
+.up .line {
+    transform: translate(0%, -50%) rotate(-45deg);
+}
+
+.up .line:nth-of-type(2) {
+    transform: translate(0%, -50%) rotate(45deg);
+}
+
+.line {
+    height: 1px;
+    width: 50%;
+    position: absolute;
+    background-color: #121212;
+    position: absolute;
+    top: 50%;
+    left: 8%;
+    transform: translate(0%, -50%) rotate(45deg);
+}
+
+.line:nth-of-type(2) {
+    right: 8%;
+    left: auto;
+    transform: translate(0%, -50%) rotate(-45deg);
+}
+
+.faq-answer p {
+    padding-left: 2em;
+    box-sizing: border-box;
+    font-size: 1.2em;
+}

@@ -1,0 +1,26 @@
+@import url('inc/styles.css');
+@import url('inc/footer.css');
+main>section>h1 {
+    text-align: center;
+    font-family: 'Cabin''Josefin Sans';
+    margin: 50px;
+    font-size: 40px;
+}
+
+main>section>article>h2 {
+    font-family: 'Cabin''Josefin Sans';
+    margin: 75px 50px 25px 50px;
+    font-size: 24px;
+}
+
+main>section>article>p {
+    font-family: 'Cabin''Josefin Sans';
+    font-size: 18px;
+    margin: 25px 50px;
+}
+
+main>section>p {
+    font-family: 'Cabin''Josefin Sans';
+    font-size: 18px;
+    margin: 25px 50px;
+}

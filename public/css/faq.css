@@ -1,0 +1,330 @@
+@import url(https://fonts.googleapis.com/css2?family=Cabin&family=Dongle:wght@300&family=Josefin+Sans&display=swap);
+* {
+    transition: 0.5s;
+}
+
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+footer {
+    position: relative;
+    margin: 0 !important;
+    padding: 0 !important;
+    bottom: 0;
+    left: 0;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    background-color: #121212;
+    font-family: "Josefin Sans", sans-serif;
+}
+
+footer * {
+    transition: 0.5s;
+}
+
+.footer-container {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    width: 100%;
+    padding: 3rem 6rem;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+footer .brand {
+    margin-bottom: 1.2rem;
+    font-size: calc(1vw + 20px);
+}
+
+.footer-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 40%;
+}
+
+.footer-info,
+.menu-item-footer {
+    margin: 0.2rem 0;
+    opacity: 0.7;
+    color: white;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+.menu-item-footer:hover {
+    opacity: 1;
+}
+
+.menu-title {
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-bottom: 1.2rem;
+}
+
+.media-icons {
+    margin-top: 10px;
+    display: flex;
+    margin-right: 1em;
+}
+
+.media-icons a {
+    text-align: center;
+    line-height: 37px;
+    height: 35px;
+    width: 35px;
+    margin: 0 5px;
+    font-size: 14px;
+    color: #fff;
+    border-radius: 50%;
+    border: 2px solid #ff0069;
+    background: #000;
+    transition: all 0.5s;
+}
+
+.media-icons a:hover {
+    color: #fff;
+    border: 1px solid #ff0069;
+    box-shadow: 1px 1px 20px 1px #ff0069;
+}
+
+.copyright-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.copyright {
+    font-size: 0.8em;
+    opacity: 0.7;
+    font-weight: 400;
+    padding: 10px 0;
+}
+
+
+/*MEDIA QUERY del footer para móvil y tablet*/
+
+
+/*Quitar reecock en tablet para que no colapse*/
+
+@media (max-width: 995px) {
+    .reecock {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .navMovil {
+        display: flex;
+        align-items: center;
+    }
+    .container span {
+        margin-right: 1em;
+    }
+    .hamburguer {
+        display: block;
+    }
+    .menu-mobile {
+        position: absolute;
+        top: 80px;
+        right: 0;
+        transform: translateY(-50vh);
+        height: calc(40vh - 80px);
+        width: 100%;
+        display: none;
+        justify-content: center;
+        align-items: flex-end;
+        flex-direction: column;
+        background-color: #1a1a1a;
+        color: white;
+        transition: 1s;
+    }
+    .openMenu {
+        display: flex;
+        transition: 0.5s;
+        transform: translateY(0);
+        z-index: 999;
+    }
+    .menu-mobile .menu-item {
+        height: 100%;
+        width: 100%;
+        border-bottom: 1px solid rgb(46, 46, 46);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.5s;
+    }
+    .menu-mobile .menu-item:hover {
+        background-color: rgb(46, 46, 46);
+    }
+    li {
+        display: none;
+    }
+    .footer-container {
+        padding: 2rem;
+        flex-direction: column;
+    }
+    .footer-content {
+        width: 100%;
+        padding: 2rem 0;
+        border-bottom: 1px solid #2a2a2a;
+        justify-content: center;
+        align-items: center;
+    }
+    .footer-content:nth-of-type(1) {
+        align-items: flex-start;
+    }
+    .footer-content:nth-of-type(3) {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+    .footer-menu {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        border-bottom: 1px solid #2a2a2a;
+    }
+    .footer-menu .footer-content:nth-of-type(1) {
+        width: 45%;
+        align-items: flex-start;
+        border-bottom: none;
+    }
+    .footer-menu .footer-content:nth-of-type(2) {
+        width: 45%;
+        align-items: flex-start;
+        border-bottom: none;
+    }
+}
+main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.title {
+    font-size: calc(2vw + 20px);
+    color: #121212;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    font-family: "Cabin";
+}
+
+article {
+    width: 60%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: "Cabin";
+}
+
+section {
+    height: auto;
+    width: 100%;
+    position: relative;
+    cursor: pointer;
+    transition: 0.5s;
+    border-bottom: 1px solid #afafaf;
+}
+
+section:last-child {
+    margin-bottom: 3em;
+}
+
+.first {
+    border-top: 1px solid #afafaf;
+}
+
+.faq-collapsible {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    box-sizing: border-box;
+    background-color: white;
+    overflow: hidden;
+}
+
+.question {
+    font-size: 1.4em;
+    font-weight: 600;
+}
+
+.question.active {
+    color: rgb(35, 113, 231);
+}
+
+.faq-answer {
+    overflow: hidden;
+    transition: 0.5s;
+    height: 0;
+}
+
+.open {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+}
+
+.arrow-container {
+    width: 40px;
+    height: 30px;
+    position: relative;
+}
+
+.up .line {
+    transform: translate(0%, -50%) rotate(-45deg);
+}
+
+.up .line:nth-of-type(2) {
+    transform: translate(0%, -50%) rotate(45deg);
+}
+
+.line {
+    height: 1px;
+    width: 50%;
+    position: absolute;
+    background-color: #121212;
+    position: absolute;
+    top: 50%;
+    left: 8%;
+    transform: translate(0%, -50%) rotate(45deg);
+}
+
+.line:nth-of-type(2) {
+    right: 8%;
+    left: auto;
+    transform: translate(0%, -50%) rotate(-45deg);
+}
+
+.faq-answer p {
+    padding-left: 2em;
+    box-sizing: border-box;
+    font-size: 1.2em;
+}

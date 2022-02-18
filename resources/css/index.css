@@ -1,0 +1,603 @@
+@import url("inc/styles.css");
+@import url("inc/header.css");
+@import url("inc/footer.css");
+
+/*Slider*/
+#slider {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+#slider article {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    animation: slideranimation linear 24s infinite 0s;
+    overflow: hidden;
+}
+
+#slider article:nth-child(1) {
+    animation-delay: 0s;
+}
+
+#slider article:nth-child(2) {
+    animation-delay: 8s;
+}
+
+#slider article:nth-child(3) {
+    animation-delay: 16s;
+}
+
+.bg {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: url("../images/slider/Slider1.webp") no-repeat center center;
+    background-size: cover;
+    animation: bganimation 24s infinite 0s;
+}
+
+#slider article:nth-child(2) .bg {
+    background-image: url("../images/slider/Slider2.webp");
+    animation-delay: 8s;
+    animation: bganimation2 24s infinite 8s;
+}
+
+#slider article:nth-child(3) .bg {
+    background-image: url("../images/slider/Slider3.webp");
+    animation-delay: 16s;
+}
+
+.bg::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.contentslide {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    animation: titleanimation 24s infinite 0s;
+}
+
+#slider article:nth-child(1) .contentslide {
+    animation-delay: 0s;
+}
+
+#slider article:nth-child(2) .contentslide {
+    animation-delay: 8s;
+}
+
+#slider article:nth-child(3) .contentslide {
+    animation-delay: 16s;
+}
+
+.contentslide h1 {
+    color: #fff;
+    font-weight: 900;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+    font-size: 120px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    font-family: BlinkMacSystemFont, "Segoe UI", "Roboto", Oxygen, Ubuntu,
+        Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    margin: 0;
+}
+
+a:focus {
+    text-decoration: dashed;
+}
+
+.load_more > a:focus {
+    text-decoration: dashed;
+}
+
+.contentslide p {
+    font-size: 1.1em;
+    position: relative;
+}
+
+.contentslide p::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1;
+}
+
+.contentslide p span {
+    display: block;
+    position: relative;
+    z-index: 2;
+    padding: 10px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+/*Animacion slider */
+
+@keyframes slideranimation {
+    0% {
+        visibility: hidden;
+        opacity: 0;
+    }
+    8% {
+        visibility: visible;
+        opacity: 1;
+    }
+    45% {
+        visibility: visible;
+        opacity: 1;
+    }
+    60%,
+    100% {
+        visibility: hidden;
+        opacity: 0;
+    }
+}
+
+/*Animacion ampliar hacia abajo derecha primera y segunda imagen*/
+
+@keyframes bganimation {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    60% {
+        transform: translate(-45%, -55%) scale(1.1);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+/*Animacion ampliar hacia abajo izquierda segunda imagen*/
+
+@keyframes bganimation2 {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    60% {
+        transform: translate(-55%, -45%) scale(1.1);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+/*Animación para el texto*/
+
+@keyframes titleanimation {
+    0% {
+        opacity: 0;
+        top: 50%;
+        left: 45%;
+    }
+    8% {
+        opacity: 0;
+        top: 50%;
+        left: 45%;
+    }
+    30% {
+        opacity: 1;
+        top: 50%;
+        left: 50%;
+    }
+    45% {
+        opacity: 1;
+        top: 50%;
+        left: 50%;
+    }
+    50% {
+        opacity: 0;
+        top: 55%;
+        left: 50%;
+    }
+    100% {
+        opacity: 0;
+        top: 55%;
+        left: 50%;
+    }
+}
+
+/*Contenido central*/
+
+.main-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.center-content {
+    max-width: 1100px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background-color: #fff;
+    margin-top: 5em;
+    padding: 2em;
+}
+
+#carousel-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+    padding: 70px 0px;
+    margin: auto;
+    width: 100%;
+}
+
+/*Juguetes más vendidos*/
+
+.blue-line {
+    display: inline-block;
+    border-top: solid 4px;
+    color: #001477;
+    width: 11em;
+    border-top: solid 2px;
+}
+
+.sold-title h1 {
+    color: #001477;
+    font-size: 1.7em;
+    font-family: "Cabin", sans-serif;
+    font-weight: bold;
+}
+
+.sold-title h2 {
+    color: #001477;
+    font-size: 2em;
+    font-family: "Cabin", sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#carousel-cards div {
+    box-sizing: border-box;
+    width: auto;
+    height: auto;
+    align-items: center;
+}
+
+.card {
+    position: relative;
+    width: auto;
+    height: auto;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: 0.5s;
+    background-color: #fff;
+    border: none;
+}
+
+.card:hover {
+    transition: 0.5s;
+    border: none;
+    box-shadow: 1px 1px 20px 8px #ff0069;
+}
+
+.card .imgBox {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    z-index: 1;
+}
+
+.card .contentBox {
+    position: relative;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 2;
+    font-family: "Cabin";
+}
+
+.card .contentBox h2 {
+    font-size: 1em;
+    color: #001477;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.card .contentBox h1 {
+    font-size: 2em;
+    color: #000;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.card .contentBox .price-before {
+    color: #001477;
+    text-decoration: line-through;
+    margin: 12px;
+    font-size: 1em;
+}
+
+.card .contentBox h3 {
+    font-size: 1.5em;
+    color: #000;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.card .contentBox .buy {
+    position: relative;
+    top: 100px;
+    opacity: 0;
+    padding: 10px 30px;
+    margin-top: 15px;
+    color: #000000;
+    text-decoration: none;
+    background: #ff0069;
+    border-radius: 30px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: 0.5s;
+}
+
+.card:hover .contentBox .buy {
+    top: 0;
+    opacity: 1;
+}
+
+.img-product {
+    height: auto;
+    width: 100%;
+}
+
+/*menu paginas*/
+
+.load_more {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 6em;
+}
+
+.load_more a {
+    background: #ff0069;
+    border: none;
+    border-radius: 11px;
+    padding: 20px 45px;
+    color: #000000;
+    display: inline-block;
+    font-family: "Cabin";
+    text-align: center;
+    cursor: pointer;
+    transition: 0.5s;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+.load_more a:hover {
+    transition: 0.5s;
+    box-shadow: 1px 1px 15px 8px #ff0069;
+}
+
+/*Galeria de imagenes con enlaces a las secciones*/
+.title-sections h1 {
+    color: #001477;
+    font-size: 1.8em;
+    font-family: "Cabin";
+    font-weight: bold;
+}
+
+.title-sections h2 {
+    color: #001477;
+    font-size: 2.2em;
+    font-family: "Cabin";
+    font-weight: bold;
+}
+
+.gallery-sections {
+    margin-top: 2em;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1em;
+}
+
+.gallery_img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: contrast(65%) saturate(1) brightness(75%);
+    transition: 0.5s;
+}
+
+.gallery_item:hover .gallery_img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+    filter: none;
+}
+
+.gallery_title {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    margin: 0;
+    padding: 0.1em 0;
+    color: #fff;
+    font-size: 1.5em;
+    font-family: "Cabin";
+    background-color: rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+}
+
+.gallery_item {
+    position: relative;
+}
+
+.gallery_item p {
+    color: #fff;
+    font-weight: 700;
+    font-size: 2em;
+}
+
+.gallery_item:nth-child(2),
+.gallery_item:nth-child(8),
+.gallery_item:nth-child(13) {
+    grid-column: span 2;
+}
+
+.gallery_item:nth-child(1),
+.gallery_item:nth-child(3),
+.gallery_item:nth-child(6),
+.gallery_item:nth-child(7),
+.gallery_item:nth-child(9) {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+/*Seccion Instagram*/
+
+#instagram {
+    margin: 6em 0em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.instagram-title h1 {
+    color: #001477;
+    font-size: 2em;
+    font-family: "Cabin", sans-serif;
+    font-weight: bold;
+}
+
+.instagram-title h2 {
+    color: #001477;
+    font-size: 1.7em;
+    font-family: "Cabin", sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#grid-images {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 1em;
+    grid-row-gap: 0.5em;
+    padding: 6em 0em;
+    width: 100%;
+}
+
+.image-container {
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 3%;
+    position: relative;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    transition: 0.5s;
+}
+
+.image-container:hover .image {
+    transition: 0.5s;
+    filter: contrast(65%) saturate(1) brightness(75%);
+}
+
+.image-container:hover .insta-link {
+    color: #fff;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    z-index: 3;
+}
+
+/* Media query para el slider, galeria e instagram */
+@media (max-width: 995px) {
+    #slider {
+        height: 400px;
+    }
+
+    .contentslide h1 {
+        font-size: 60px;
+    }
+
+    .contentslide p {
+        font-size: 10px;
+    }
+
+    .main-content {
+        width: 100%;
+    }
+
+    .center-content {
+        padding: 2em;
+    }
+
+    .gallery-sections {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery_item:nth-child(12),
+    .gallery_item:nth-child(14) {
+        grid-column: span 2;
+    }
+
+    #grid-images {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #carousel-cards {
+        grid-template-columns: repeat(2, 1fr);
+        grid-row-gap: 2em;
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-sections {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .gallery_item:nth-child(4),
+    .gallery_item:nth-child(5),
+    .gallery_item:nth-child(10),
+    .gallery_item:nth-child(11) {
+        grid-row: span 2;
+        grid-column: span 2;
+    }
+
+    #grid-images {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    #carousel-cards {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

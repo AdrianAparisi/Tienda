@@ -1,0 +1,21 @@
+php artisan make:controller Api/OrderApiController --api --model=Order
+php artisan make:migration create_orders_table
+php artisan make:controller Api/OrderItemApiController --api --model=OrderItem
+php artisan make:migration create_order_items_table
+php artisan make:controller Api/DirectionApiController --api --model=Direction
+php artisan make:migration create_directions_table
+php artisan make:controller Api/CategoryApiController --api --model=Category
+php artisan make:migration create_categories_table
+php artisan make:model Product -mcr
+php artisan make:controller Api/ProductApiController --api --model=Product
+php artisan make:migration category_product
+php artisan make:controller Api/UserProductListApiController --api --model=UserProductList
+php artisan make:migration create_user_product_lists_table
+php artisan make:migration add_fields_to_users_table
+php artisan make:migration add_foreigns_to_users_table
+php artisan make:migration create_cart_table
+php artisan make:controller Api/UserApiController --api --model=User
+php artisan make:controller UserController -r
+php artisan make:controller Api/CartApiController --api --model=Cart
+php artisan make:controller AdminController
+php artisan make:request ProductRequest
